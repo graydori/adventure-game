@@ -24,38 +24,41 @@
 	<meta http-equiv="cleartype" content="on">
 
 	<!-- jQuery Mobile CSS bits -->
-	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.2.min.css">
 
-	<!-- if you have a custom theme, add it here -->
-	<link rel="stylesheet"  href="themes/jQuery-Mobile-Boilerplate.css" />
-
-    <link href='http://fonts.googleapis.com/css?family=Bubblegum+Sans|Londrina+Solid' rel='stylesheet' type='text/css'>
-    
+    <link href='http://fonts.googleapis.com/css?family=Bubblegum+Sans|Londrina+Solid|Luckiest+Guy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.min.css" />
 	<!-- Custom css -->
 	<link rel="stylesheet" href="css/custom.css" />
 
 	<!-- Javascript includes -->
-	<script src="js/jquery-1.8.2-min.js"></script>
-	<script src="js/mobileinit.js"></script>
-	<script src="js/ios-orientationchange-fix.min.js"></script>
-	<script src="js/jquery.mobile-1.2.0.min.js"></script>
-    <script src="js/buzz.js"></script>
-	<script src="js/application.js"></script>
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+	<script src="js/libs/ios-orientationchange-fix.min.js"></script>
+	<script src="js/libs/jquery.mobile-1.3.2.min.js" ></script>
+	<script src="js/libs/buzz.js"></script>
+    
+    <!--CDN link for the latest TweenMax-->
+    <script src="js/libs/TweenMax.min.js"></script>
+    
+    
+	<script src="js/app/application.js"></script>
+
+    
 	<!-- Startup Images for iDevices -->
 	<script>(function(){var a;if(navigator.platform==="iPad"){a=window.orientation!==90||window.orientation===-90?"images/startup-tablet-landscape.png":"images/startup-tablet-portrait.png"}else{a=window.devicePixelRatio===2?"images/startup-retina.png":"images/startup.png"}document.write('<link rel="apple-touch-startup-image" href="'+a+'"/>')})()</script>
 	<!-- The script prevents links from opening in mobile safari. https://gist.github.com/1042026 -->
 	<script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 </head> 
 <body> 
-	<div data-role="page" id="advisory" data-bg="upbeat">
+	<div data-role="page" id="advisory">
 
 
 		<div data-role="content">
-			<div class="advisory fadein">
+			<div class="advisory">
 			<h4>Advisory</h4>
-			<p>This Game is a <i>very</i> Naughty</p>
+			<p>This Game is a <i>very</i> Naughty. Has Explicity Language, Images, and Suggestions.</p>
 			<p>Are you sure you want to play?</p>
-			<a href="#title1"  data-transition="fade" data-role="button">Please!</a>
+			<a href="#title1"  data-transition="fade" data-role="button">Yes, Please!</a>
 			</div>
 		</div>
 		
@@ -64,49 +67,44 @@
 		</div>	
 		
 	</div>
-	<div data-role="page" id="title1"  data-timeout="1000" style="background:red;" >
-
-
-		<div data-role="content">
-		
-			Intro Sequence Play Music and Show title
-		</div>
-			
-		
+	<div data-role="page" id="title1" data-animation="clouds" data-timeout="8000"  >
+        <div data-role="content">
+            <div id="title-message"><h1>Sydney's Super Sexy Adventure</h1></div>
+        </div>
 	</div>
-	<div data-role="page" id="title2" data-timeout="1000" style="background:red;" >
+	<div data-role="page" id="title2" data-timeout="3000">
 		<div data-role="content">
-			<div>Good Morning!</div>
+			<div class="box-bubble">Good Morning!</div>
 		</div>
 	</div>
-	<div data-role="page" id="title3"  data-timeout="1000" >
+	<div data-role="page" id="title3"  data-timeout="3000" >
 	<div data-role="content">
-		<div>What will I rub this one out with today?</div>
+		<div class="box-bubble">What will I rub this one out with today?</div>
 	</div>
 	</div>
 	<div data-role="page" id="choice1">
 	<div data-role="content">
-		<div>What will I rub this one out with today?</div>
+		<div class="box-bubble">What will I rub this one out with today?</div>
 	<div data-role="controlgroup">
-	<a href="#result-orange" data-role="button">Orange</a>
-	<a href="#result-strawberry" data-role="button">Strawberry</a>
-	<a href="#result-mahogony" data-role="button">Mahogany</a>
+	<a href="#result1-orange" data-role="button">Orange</a>
+	<a href="#result2-strawberry" data-role="button">Strawberry</a>
+	<a href="#result3-mahogony" data-role="button">Mahogany</a>
 	</div>
 	</div>
 	</div>
-	<div data-role="page" id="result-orange"  data-timeout="1000"  data-ignore="true">
+	<div data-role="page" id="result1-orange"  data-timeout="1000"  data-ignore="true">
 	<div data-role="content">
-		<div>Mmmm..</div>
+		<div class="box-bubble">Mmmm..</div>
 	</div>
 	</div>
-	<div data-role="page" id="result-strawberry"  data-timeout="1000"   data-ignore="true">
+	<div data-role="page" id="result1-strawberry"  data-timeout="1000"   data-ignore="true">
 	<div data-role="content">
-		<div>Mmmm..</div>
+		<div class="box-bubble">Mmmm..</div>
 	</div>
 	</div>
-	<div data-role="page" id="result-mahogony"  data-timeout="1000"   data-ignore="true">
+	<div data-role="page" id="result1-mahogony"  data-timeout="1000"   data-ignore="true">
 	<div data-role="content">
-		<div>Mmmm..</div>
+		<div class="box-bubble">Mmmm..</div>
 	</div>
 	</div>
 	<div data-role="page" id="morning-1" data-timeout="1000"   >
@@ -268,7 +266,7 @@
 	</div>
     <div data-role="page" id="result-hi-good">	
 		<div data-role="content">
-            <div>Just coffee. I've been up all night.</div>
+            <div class="chat-box">Just coffee. I've been up all night.</div>
             <div data-role="controlgroup">
                 <a href="#result-coffee-bad" data-role="button">Well I have some poppers in my bag.</a>
                 <a href="#result-coffee-ok" data-role="button">Comming right up.</a>

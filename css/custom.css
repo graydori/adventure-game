@@ -1,11 +1,20 @@
 /*
-	jQuery Mobile Boilerplate
-	css/custom.css
+    jQuery Mobile Boilerplate
+    css/custom.css
 */
 body,
 .ui-body-c,
 .ui-bar-a {
-font-family: 'Bubblegum Sans', cursive;
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+.ui-btn ,
+h1, h2, h3, h4, h5{
+    font-family: 'Londrina Solid', cursive;
+}
+
+#title1 h1 {
+    font-family: 'Luckiest Guy', cursive;
 }
 
 .ui-bar-a
@@ -17,41 +26,12 @@ font-family: 'Bubblegum Sans', cursive;
     opacity:0.5;
 }
 
-.ui-btn ,
-h1, h2, h3, h4, h5{
-font-family: 'Londrina Solid', cursive;
-}
-
-.ui-page.animation-complete .fadein {
-    opacity:1;
-
-  -webkit-transform: scale(1) rotateZ(0);  
-     -moz-transform: scale(1) rotateZ(0); 
-      -ms-transform: scale(1) rotateZ(0); 
-       -o-transform: scale(1) rotateZ(0); 
-          transform: scale(1)  rotateZ(0); 
-}
-
-.fadein {
-    perspective:1000px;
-    -webkit-transition: all 1.5s ease-in; 
--moz-transition: all 1.5s ease-in; 
--o-transition: all 1.5s ease-in; 
-transition: all 1.5s ease-in;
-opacity:0;
-
-  -webkit-transform: scale(1.4) rotateZ(45deg); 
-     -moz-transform: scale(1.4) rotateZ(45deg); 
-      -ms-transform: scale(1.4) rotateZ(45deg); 
-       -o-transform: scale(1.4) rotateZ(45deg); 
-          transform: scale(1.4) rotateZ(45deg); 
-
-transform: rotateX(-20deg) translateY(-10px);
-}
-
 
 .advisory
 {
+    -webkit-animation: tada 1s;
+    animation: tada 1s;
+    
     font-size:150%;
     background:#222;
     color:#eee;
@@ -73,7 +53,157 @@ transform: rotateX(-20deg) translateY(-10px);
     padding-top:0;
     text-shadow:2px 2px rgba(0,0,0,0.9), 2px 2px 20px rgba(255,255,255,0.5);
 }
-#advisory {
-background-color: rgb(255, 255, 255);
-background-image: linear-gradient(180deg, rgb(88, 158, 220) 0%, rgb(158, 198, 235) 50%, rgb(255, 255, 255) 100%);
+
+.bedroom {
+    position: absolute;
+        /* Set rules to fill background */
+      min-height: 100%;
+    top:0;
+    zoom:34;
+
+      /* Set up proportionate scaling */
+      width: 100%;
+      height: auto;
+    
+    opacity: 0;
+    filter: blur(3px); 
+    -webkit-filter: blur(3px); 
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px); 
+    -ms-filter: blur(3px);
+}
+
+.clouds-in-sky {
+    display:block;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:256px;
+    height:256px;
+    background-repeat: no-repeat;
+    background-image:url('../images/cloud.png');
+}
+#title-message {
+    position: absolute;
+    width: 100%;
+    top: 200%;
+    margin-top: -15%;
+    left: 0;
+}
+
+#title-message h1{
+    text-align:center;
+    width:50%;
+    margin:0 auto;
+    text-shadow: 2px 2px 0 red,
+        -2px 2px 0 red,
+        2px -2px 0 red,
+        -2px -2px 0 red,
+        -3px -3px 0 blue,
+        -4px -4px 0 blue,
+        -5px -5px 0 blue,
+        -6px -6px 0 blue,
+        -7px -7px 0 blue,
+        -8px -8px 0 blue,
+        -5px -1px 0 red,
+        -6px -2px 0 red,
+        -7px -3px 0 red,
+        -8px -4px 0 red,
+        -9px -5px 0 red,
+        -10px -6px 0 red,
+        -10px -7px 0 red,
+        -1px -5px 0 red,
+        -2px -6px 0 red,
+        -3px -7px 0 red,
+        -4px -8px 0 red,
+        -5px -9px 0 red,
+        -6px -10px 0 red,
+        -10px -10px 0 red;
+    color: lightsalmon;
+    font-size: 53px;
+    line-height: 47px;
+    
+    animation: shake 12s;
+    -webkit-animation: shake 12s;
+    animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+}
+
+
+/*
+#advisory .ui-content {
+    overflow:visible;
+    z-index:2;
+}*/
+
+
+.ui-controlgroup {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+.ui-controlgroup-controls {
+    padding: 0 15px;
+}
+.box-bubble:after,
+.box-bubble:before
+{
+    display:block;
+    position:absolute;
+    bottom:-20px;
+    left:31px;
+    content:"";
+    border:transparent solid;
+    border-top-color:white;
+    border-width:20px 30px 0 0;
+    width:0;
+    height:0;
+}
+
+
+.box-bubble:before
+{
+    left:30px;
+    bottom:-22px;
+    border-top-color:rgba(0,0,0,0.2); 
+    border-width:21px 30px 0 0;
+}
+
+.box-bubble {    
+    position:relative;
+    padding:10px;
+    background:#fff;
+    box-shadow:0 1px 10px rgba(0,0,0,0.3);
+    border-radius:3px;
+    margin-bottom:22px;
+}
+
+.ui-content {
+    overflow-y:visible;
+}
+
+[data-animation=clouds] {
+    overflow: hidden !important;
+}
+ .ui-overlay-c {
+     background: white;
+ }
+
+.ui-body-c,
+#advisory,
+#title1 {
+    background-color: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(88, 158, 220) 0%, rgb(158, 198, 235) 50%, rgb(255, 255, 255) 100%);
+}
+#title2, #title3, #choice1  {
+    
+    background: top left  url('../images/characters/sydney-underwear.png') , top left  url('../images/bedroom.png'),linear-gradient(180deg, rgb(88, 158, 220) 0%, rgb(158, 198, 235) 50%, rgb(255, 255, 255) 100%);
+    background-size: cover;
+}
+
+[id*=result1]  {
+    background: top left  url('../images/characters/sydney-underwear-eyes-closed.png') , top left  url('../images/bedroom.png'),linear-gradient(180deg, rgb(88, 158, 220) 0%, rgb(158, 198, 235) 50%, rgb(255, 255, 255) 100%);
+    background-size: cover;
 }
